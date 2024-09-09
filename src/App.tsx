@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import AboutMe from "./components/Home/AboutMe";
 import ContactForm from "./components/Home/ContactForm";
 import Experience from "./components/Home/Experience";
@@ -9,16 +11,27 @@ import Skills from "./components/Home/Skills";
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Hero />
-      <AboutMe />
-      <Skills />
-      <Experience />
-      <Projects />
-      <ContactForm />
-      <Footer />
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <div>
+                <Hero />
+                <AboutMe />
+                <Skills />
+                <Experience />
+                <Projects />
+                <ContactForm />
+                <Footer />
+              </div>
+            </>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
